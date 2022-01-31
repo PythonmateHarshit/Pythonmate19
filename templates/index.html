@@ -1,0 +1,804 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PythonMate - Because you the initiators deserve best</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script src="{%static 'js/extraEffects.js'%}"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+     
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css'%}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css'%}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <style>
+      *{
+  margin: 0;
+  padding: 0;
+}
+.gallery-section{
+  width: 100%;
+  padding: 20px 0;
+  background: white;
+}
+.inner-width{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+.gallery-section h1{
+  font-size: 30px;
+    font-weight: 400;
+  text-align: center;
+  
+  color: #000;
+}
+.gallery-section p{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 120px;
+}
+ .gallery-section .gallery{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+ } 
+ .gallery-section .image{
+  flex: 25%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-section .image img{
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+.gallery-section .image:hover img{
+  transform: scale(1.4) rotate(15deg);
+}
+@media screen and (max-width:960px){
+  .gallery-section .image{
+    flex: 33.33%;
+  }
+}
+@media screen and (max-width:720px){
+  .gallery-section .image{
+    flex: 33.33%;
+  }
+}
+
+@media screen and (max-width:480px){
+  .gallery-section .image{
+    flex: 33.33%;
+  }
+}
+
+.align-self-stretch{
+ align-items:center;
+}
+.work-border{
+  border-radius: 10px 10px 10px 10px;
+  border: 0px solid;
+}  
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light navbar-fixed" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand logo_h" href=""><img src="{% static 'images/logo.png' %}" alt="not running"></a>
+    <a class="navbar-brand font-weight-bold" href="">PythonMate</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="#home" class="nav-link font-weight-bold">Home</a></li>
+        <li class="nav-item"><a href="#services" class="nav-link font-weight-bold" onclick="services()">Services</a></li>
+        <li class="nav-item"><a href="#about1" class="nav-link font-weight-bold" onclick="about()">About</a></li>
+        <li class="nav-item"><a href="#work" class="nav-link font-weight-bold"  onclick="work()">Work</a></li>
+        <li class="nav-item cta"><a href="#contact" class="nav-link font-weight-bold" onclick="contactus()"><span>Contact Us</span></a></li>          
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-wrap">
+  <div class="overlay">  </div>
+  <div class="container">
+    <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
+      <div class="one-forth ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
+      	<h1 class="mb-4"> We at Pythonmate <span id="words"></span></h1>
+        <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">As a full-fledged Python oriented software company, we have been helping businesses from small startups to large brands and govt agency meeting their goals through technology innovation.</p>        
+        <p class="nav-item cta"><a href="#contact" class="nav-link" onclick="contactus()"><span>Get In Touch</span></a> </p>
+        <!-- <a href="#" data-toggle="modal" data-target="#modalRequest"> -->
+      </div>
+      <div class="one-half align-self-md-end align-self-sm-center">
+      	<div class="slider-carousel owl-carousel">
+      		<div class="item">
+	          <img src="{% static 'images/dashboard_full_2.png' %}" class="img-fluid img" alt="">
+          </div>
+          <div class="item">
+	          <img src="{% static 'images/dashboard_full_2.png' %}" class="img-fluid img"alt="">
+          </div>
+          <div class="item">
+	          <img src="{% static 'images/dashboard_full_3.png' %}" class="img-fluid img"alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="about" class="ftco-section ftco-section-2">
+  <div class="overlay"></div>
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-md-8">
+ 				<h3 class="heading-white">Because you the initiators deserve best.</h3>
+  		</div>
+  	</div>
+  </div>
+</section>
+  <!-- <a name="service"></a> -->
+<section id="services"class="ftco-section ftco-services">
+  <section class="gallery-section">
+    <div class="inner-width">
+      <h1> Our Service Can Ally With Your Passion</h1>
+      <p>With Proper Contracts, Ideation, Documents, Suggestions, Quatations, Regular Updates, Testings, Deployments, Collaboration</p>
+    </div>
+  </section>
+</section>
+<div class="container">
+  <div class="row">  
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon">
+            <i class="fa fa-mobile" style="font-size: 100px"></i>
+          </div>
+        </div>
+        <div class="media-body p-2 mt-3">
+          <h3 class="heading">App Development</h3>
+          <p class="content_para">
+            PythonMate offers insightful expertise in mobile app development on android, ios and hybrid app.
+          </p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon pt-4">
+            <br>
+            <i class="fa fa-desktop" style="font-size: 70px"></i>
+          </div>
+        </div>
+        <div class="media-body p-2 mt-3">
+          <h3 class="heading pt-2">Web Application</h3>
+          <p class="content_para ">
+            We have a good expertise in web application. We deals with the latest technologies like angular,react,node js and django.
+          </p>
+        </div>
+      </div>      
+    </div>
+
+    
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon">
+            <i class="fa fa-code" style="font-size: 100px"></i>
+          </div>
+        </div>
+        <div class="media-body p-2 mt-3">
+          <h3 class="heading pt-2">Machine Learning</h3>
+          <p class="content_para ">
+            We delivers NLP Solutions and Services using the integration of Machine and Deep Learning algorithms.
+          </p>
+        </div>
+      </div>      
+    </div>
+  <br>
+  <div class="row">
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon pt-3">
+            <i class="fa fa-edit" style="font-size: 80px"></i>
+          </div>
+        </div>
+        <div class="media-body pt-5 mt-3">
+          <h3 class="heading ">UX/UI Designs</h3>
+          <p class="content_para ">
+            PythonMate has always aspired to create simple, user-friendly application for its customers. Thus, we provide you highly experienced developer for UX/UI development .
+          </p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon pt-5">
+            <i class="fa fa-cloud" style="font-size: 90px"></i>
+          </div>
+        </div>
+        <div class="media-body p-2 mt-3">
+          <h3 class="heading pt-2">Devops</h3>
+          <p class="content_para ">
+            We helps organization transform their IT environment with best-in-class Cloud Computing Services. Our team of experts deliver highly-effective and reliable cloud computing 
+          </p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon">
+            <i class="fa fa-line-chart" style="font-size: 100px"></i>
+          </div>
+        </div>
+        <div class="media-body pt-1 mt-3">
+          <h3 class="heading ">Datascience</h3>
+          <p class="content_para ">
+            Bring your business to the next level with data-driven solutions, high-load machine learning and up-to-date AI.
+          </p>
+        </div>
+      </div>      
+    </div><br>
+  <div class="row">
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon pt-5">
+            <i class="fas fa-vr-cardboard" style="font-size: 80px"></i>
+          </div>
+        </div>
+        <div class="media-body p-2 mt-3">
+          <h3 class="heading pt-2">AR/ VR</h3>
+          <p class="content_para ">
+            We offer Augmented and Virtual Reality Solutions tailored to your needs and industry. Our AR/VR solutions combine cutting-edge technology and ease of use.
+          </p>
+        </div>
+      </div>      
+    </div>
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon">
+            <i class="fas fa-plug" style="font-size: 90px;"></i>
+          </div>
+        </div>
+        <div class="media-body p-2 mt-2">
+          <h3 class="heading ">IOT</h3>
+          <p class="content_para ">
+            We offer servers, networks, complete IOT solutions and services. Our team of experts is ready to serve you.
+          </p>
+        </div>
+      </div>      
+    </div>
+    
+    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+      <div class="media block-6 services d-block text-center">
+        <div class="d-flex justify-content-center">
+          <div class="icon pt-3">
+            <i class="fa fa-check" style="font-size: 90px"></i>
+          </div>
+        </div>
+        <div class="media-body p-2 mt-3">
+          <h3 class="heading pt-2">QA</h3>
+          <p class="content_para ">
+            We undertake QA Testing Services as an integral part of our every project.We provide automation testing,manual testing and end to end testing services.
+          </p>
+        </div>
+      </div>      
+    </div>
+</div>  
+</div>
+</div>
+<!-- <a name="about"></a> About-->
+<section class="ftco-section" id="about1">
+  <div class="container">
+    <div class="row d-md-flex">
+      <div class="col-md-6 ftco-animate img about-image" style="background-image: url({% static 'images/about.jpg' %});"></div>
+        <div class="col-md-6 ftco-animate p-md-5">
+        <div class="row">
+          <div class="col-md-12 nav-link-wrap mb-5">
+            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">What we do</a>
+
+              <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">Our mission</a>
+
+              <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">Our vision</a>
+            </div>
+          </div>
+          <div class="col-md-12 d-flex align-items-center">
+            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
+                <div>
+                  <br>
+                  <h2 class="mb-4">What We Do</h2>
+                  <p> Our expertise is focused in Python backed apps development including a vast majority of but are not limited with Artificial Intelligence, Machine Learning, Deep Learning, Application development, Eye Pleasing Frontend Development as well as industrial internet of things, to bridge the gap between your business and your information technology-driven goals.</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+                <div>
+                  <br>
+                  <h2 class="mb-4">Our Mission</h2>
+                  <p> To be a standard of understanding, quality & reliability in services in the IT  industry.</p>
+                  <p>As your information technology partner, we can help you:<br>
+                  - Quick, Flexible and Highly Scalable Develop solutions per evolving market needs<br>- Consultancy and/or service in end to end project development<br>- Bring innovative ideas to reality<br>- Convert manual processes to sophisticated custom software applications<br>- Maintain business critical software applications<br>- Adopt and implement an information technology driven</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+                <div>
+                  <br>
+                  <h2 class="mb-4">Our Vision</h2>
+                  <p> To achieve 100% customer satisfaction by delivering quality products and   services at an affordable cost. </p>
+                  <p>We want to establish ourselves as the best choice in Computing and Information Technology Services, Consultancy and Development by offering the full spectrum of services.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(static/images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+	<div class="container">
+		<div class="row justify-content-center ">
+      <!-- justify-content-center -->
+			<!-- <div class="col-md-12">
+    		<div class="row"> -->
+      <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18 text-center">
+          <div class="text">
+            <strong class="number" >94%</strong>
+            <span>Recurring Clients</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18 text-center">
+          <div class="text">
+            <strong class="number">30</strong>
+            <span>Months Support</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18 text-center">
+          <div class="text">
+            <strong class="number">400+</strong>
+            <span>Sleepless Nights</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18 text-center">
+          <div class="text">
+            <strong class="number" >100 %</strong>
+            <span>Availability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="work" class="ftco-section ftco-work">
+  <div class="container mt-5 mb-2">
+    <div class="row justify-content-center mb-2 pb-4">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <h2 class="mb-2">Things We Created For Previous Visitors</h2>
+        <span class="subheading" style="font-size: 14px;">We're Happy to share many of them</span>
+      </div>
+    </div>
+    <!-- <a name="project"></a> project-->
+    <div class="row">
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry" >
+          <a href="#work" onclick="work()" class="img work-border" style="background-image: url({% static 'images/work-1.png' %});">
+          <div class="text d-flex justify-content-center align-items-center work-border">
+            <div class="p-3">
+              <h3>PictureBazzar</h3>
+              <p>Social, Professional and Historical </p>
+            </div>
+          </div></a>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <a href="#work" onclick="work()" class="img work-border img-fluid" style="background-image: url({% static 'images/work-2.png' %});">
+            <div class="text d-flex justify-content-center align-items-center work-border">
+              <div class="p-3">
+                <h3>Mocashi</h3>
+                <p>Vegetable and Fruits</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <a href="#work" onclick="work()" class="img work-border" style="background-image: url({% static 'images/work-3.png' %});">
+          <div class="text d-flex justify-content-center align-items-center work-border">
+            <div class="p-3">
+              <h3>Harpreet Ford</h3>
+              <p>Sales and Services</p>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <a href="#work" onclick="work()" class="img work-border" style="background-image: url({% static 'images/work-5.png' %}); ">
+            <div class="text d-flex justify-content-center align-items-center work-border">
+              <div class="p-3">
+                <h3>CogoFly</h3>
+                <p>Social network, Travel</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <a href="#work" onclick="work()" class="img work-border" style="background-image: url({% static 'images/work-4.png' %});">
+          <div class="text d-flex justify-content-center align-items-center work-border">
+            <div class="p-3">
+              <h3>Chatbot</h3>
+              <p>Social Communication</p>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <!-- <img src="{% static 'images/work-6.jpg' %}" class="img work-border img-fluid"> -->
+          <a href="#work" onclick="work()" class="img work-border" style="background-image: url({% static 'images/work-6.jpg' %}); ">
+          <div class="text d-flex justify-content-center align-items-center work-border">
+            <div class="p-3">
+              <h3>ERP and CRM</h3>
+              <p>Account and Inventory Software</p>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <a href="#work" onclick="work()"class="img work-border" style="background-image: url({% static 'images/work-7.png' %}); ">
+            <div class="text d-flex justify-content-center align-items-center work-border">
+              <div class="p-3">
+                <h3>Careerkeeper</h3>
+                <p>Employment</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <a href="#work" onclick="work()" class="img work-border" style="background-image: url({% static 'images/work-8.png' %});">
+          <div class="text d-flex justify-content-center align-items-center work-border">
+            <div class="p-3">
+              <h3>PerkyPints</h3>
+              <p>Food and Drinks</p>
+
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="work-entry">
+          <a href="#work" onclick="work()" class="img work-border" style="background-image: url({% static 'images/vox1.png' %}); ">
+            <div class="text d-flex justify-content-center align-items-center work-border">
+              <div class="p-3">
+                <h3>Voxpow</h3>
+                <p>Speech Recognition</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>   
+  </div>
+</section>
+<script>
+  $('.gallery').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		closeBtnInside: false,
+		fixedContentPos: true,
+		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+		image: {
+			verticalFit: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300 // don't foget to change the duration also in CSS
+		}
+	});
+</script>
+          
+      <!-- <a name="contact"></a>
+      Contact us -->
+<div id="contact" class="ftco-section contact-section ftco-degree-bg mb-5">
+  <div class="container mb-5">
+    <div class="row d-flex mb-5 mt-1 contact-info">
+      <div class="col-md-12 mb-4">
+        <h2 class="h2 text-center font-weight-bold mb-4">Contact Information</h2>
+      </div>
+      <div class="w-100"></div>
+        <div class="col-md-3 mt-2">
+          <h5 class="font-weight-bold">Address</h5>
+          <p class="text-dark">
+          <span class="icon icon-map-marker"></span>&nbsp;&nbsp;PythonMate, 1114, Scheme 114, Indore, India (452001)</p>
+        </div>
+      <div class="col-md-3">
+        <h5 class="font-weight-bold">Phone</h5>
+        <p class="text-dark" style="font-size: 20px;">
+          <a href="tel://+91 9174704877">
+            <i class="fa fa-mobile text-dark" style="font-size: 26px"></i>
+          &nbsp;&nbsp;
+          <span id="pwd_spn" class="password-span text-primary">+91 9174704877</span></a>
+          <button id="cp_btn" onclick="copyText('pwd_spn',this)" class="btn bg-white " data-toggle="tooltip" data-placement="top" title="Copy Text"><div class='badge badge-secondary'>copy</div></button></p>
+          <p style="font-size: 20px;"><a href="https://wa.me/918225998112" target="_blank"><i class="fa fa-whatsapp text-success" style="font-size: 22px"></i><span id="pwd_spn1" class="password-span text-primary" >&nbsp;&nbsp;+91 8225998112</span></a>
+          <button id="cp_btn1" onclick="copyText('pwd_spn1',this)" class="btn bg-white " data-toggle="tooltip" data-placement="top" title="Copy Text"><div class="badge badge-secondary" style="font-size: 12px;">copy</div></button></p>
+
+      </div>
+      <div class="col-md-3">
+        <h5 class="font-weight-bold">Email</h5>
+        <a href="mailto:hello@pythonmate.com"><span id="pwd_spn2" style="font-size: 20px;"class="password-span"><i class="fa fa-envelope" style="font-size: 20px; color: black;" aria-hidden="true"></i>&nbsp;&nbsp;hello@pythonmate.com</span></a><button  onclick="copyText('pwd_spn2',this)" class="btn bg-white" id="cp_btn2"><div class='badge badge-secondary'>copy</div></button>
+      </div>
+      <div class="col-md-3">
+        <h5 class="font-weight-bold">Website</h5>
+        <a href="#" target="_blank"><i class="fa fa-globe " style="font-size: 20px; color: black;" aria-hidden="true"></i>&nbsp;&nbsp;<span style="font-size: 20px;"> https://www.pythonmate.com</a>
+      </div>
+    </div>
+    <div class="row block-9 mt-4">
+      <div class="col-md-6 pr-md-5">
+        {% if message %}
+        <div class="alert alert-primary" role="alert">
+          {{message}}
+        </div>
+        {% endif %}
+        <form method="POST" action="">
+          {% csrf_token %}
+          <div class="form-group">
+            <input type="text" class="form-control" name='clientname' placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <input required type="email" class="form-control" name='clientemail' placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name='clientsubject' placeholder="Mobile Number, Skype or Linkedin">
+          </div>
+          <div class="form-group">
+            <textarea required name="clientmessage" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary px-5 py-3">
+          </div>
+        </form> 
+      </div>
+      <div class="col-md-6 pr-md-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.921806979478!2d75.89617958137183!3d22.768282936763324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4e3522559808e24c!2sNarmada%20Jhabua%20Gramin%20Bank!5e0!3m2!1sen!2sin!4v1574075415432!5m2!1sen!2sin" width="90%" height="90%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ftco-section-parallax">
+  <div class="overlay"></div>
+  <div class="parallax-img d-flex align-items-center">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+          <h2>Subcribe to our Newsletter</h2>
+          <p>For Our Latest News</p>
+          <div class="row d-flex justify-content-center mt-5">
+            <div class="col-md-8">
+              <form action="#" class="subscribe-form">
+                <div class="form-group d-flex">
+                  <input type="text" class="form-control" placeholder="Enter email address">
+                  <input type="submit" value="Subscribe" class="submit px-3" style="outline:none;">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+</section>
+<!-- Footer -->
+<section>
+  <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">PythonMate</h2>
+            <p>PythonMate offers IT services in Customized Web Design Solutions, Software Design & Development, Search Engine Optimization, Mobile Application Development, Engineering & 3D modeling services.</p>
+          </div>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+            <li class="ftco-animate">
+              <a href="#"><span class="icon-twitter"></span></a>
+            </li>
+            <li class="ftco-animate">
+              <a href="#"><span class="icon-facebook"></span></a>
+            </li>
+            <li class="ftco-animate">
+              <a href="#"><span class="icon-instagram"></span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 pr-md-4">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Recent Projects</h2>
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4 " style="background-image: url({% static 'images/image_1.png' %});"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#" >HR Scan</a></h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4" style="background-image: url({% static 'images/image_2.jpg' %});"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#">General Analysis</a></h3>
+                <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-3">
+        <div class="ftco-footer-widget">
+         	<h2 class="ftco-heading-2">Contact Info</h2>
+         	<div class="block-23 ">
+	          <ul>
+	            <li><span class="icon icon-map-marker"></span><span class="text"><a href="https://www.google.com/maps/place/Narmada+Jhabua+Gramin+Bank/@22.7679481,75.8940841,17z/data=!3m1!4b1!4m5!3m4!1s0x396302b479d0649f:0x4e3522559808e24c!8m2!3d22.7679481!4d75.8962728">PythonMate, 1114, Scheme 114, Indore, India (452001)</a></span></li>
+	            <li><a href="tel://+91 8225998112"><span class="icon icon-phone"></span><span class="text">+91 8225998112</span></a></li>
+	            <li><a href="mailto:pythonmatejodhani@gmail.com"><span class="icon icon-envelope"></span><span class="text">hello@pythonmate.com</span></a></li>
+	          </ul>
+	        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made with <i class="icon-heart" aria-hidden="true"></i> by <a href="file:///C:/Users/hi/Desktop/PythonMate/index.html">PythonMate</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+  
+
+  <!-- loader
+   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>-->
+
+  <!-- Modal -->
+<div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalRequestLabel">Get In Touch</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="form-group">        
+            <input type="text" class="form-control" id="appointment_name" placeholder="Full Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="appointment_date" placeholder="Date">
+                </div>    
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="appointment_time" placeholder="Time">
+                </div>
+              </div>
+          </div>
+          <div class="form-group">
+            <textarea name="" id="appointment_message" class="form-control" cols="30" rows="7" placeholder="Message"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Get a Quote" class="btn btn-primary">
+          </div>
+        </form>
+      </div>  
+    </div>
+  </div>
+</div>
+<script>
+//document.getElementById("cp_btn").addEventListener("click", copy_password);
+let elementIdList = ["cp_btn","cp_btn1","cp_btn2"];
+function copyText(elementId,currentElement) {
+    let currentElementId = currentElement.getAttribute("id");
+    currentElement.childNodes[0].innerHTML = "Copied!";
+    var copyText = document.getElementById(elementId);
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+    elementIdList.forEach(element=>{
+      if(element!=currentElementId){
+        document.getElementById(element).childNodes[0].innerHTML = "Copy";
+      }
+    });
+
+
+}
+</script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
